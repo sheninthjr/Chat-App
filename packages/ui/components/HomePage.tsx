@@ -9,10 +9,10 @@ const HomePage = () => {
             Welcome to Jr ChatApp
           </div>
           <div className="flex justify-between">
-            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-4">
+            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-2 rounded mr-4">
               Create a Room
             </button>
-            <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
+            <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-2 rounded">
               Join a Room
             </button>
           </div>
