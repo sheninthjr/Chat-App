@@ -8,7 +8,7 @@ const Message = () => {
   const [serverMessages, setServerMessages] = useState([]);
   const messagesContainerRef = useRef(null);
   useEffect(() => {
-    const ws = new WebSocket("ws://localhost:3000");
+    const ws = new WebSocket("ws://localhost:3001");
 
     ws.onmessage = function (event) {
       const data = JSON.parse(event.data);
@@ -57,6 +57,7 @@ const Message = () => {
       messagesContainerRef.current.scrollTop = messagesContainerRef.current.scrollHeight;
     }
   }, [serverMessages]);
+  
   const handleKeyPress = (event) => {
     if (event.key === "Enter") {
       sendMessage();

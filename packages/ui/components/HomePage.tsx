@@ -1,6 +1,13 @@
-import React from "react";
+'use client';
+import { useRouter } from 'next/router';
+
 
 const HomePage = () => {
+  const router = useRouter();
+  const createRoom = ()=>{
+    const roomId = Math.random().toString(36).substring(2, 10);
+    router.push(`/${roomId}`);
+  }
   return (
     <div>
       <div className="flex justify-center items-center h-screen">
@@ -9,7 +16,7 @@ const HomePage = () => {
             Welcome to Jr ChatApp
           </div>
           <div className="flex justify-between">
-            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-2 rounded mr-4">
+            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-2 rounded mr-4" onClick={createRoom}>
               Create a Room
             </button>
             <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-2 rounded">
