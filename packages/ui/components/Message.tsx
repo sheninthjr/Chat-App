@@ -57,7 +57,7 @@ const Message = () => {
       messagesContainerRef.current.scrollTop = messagesContainerRef.current.scrollHeight;
     }
   }, [serverMessages]);
-  
+
   const handleKeyPress = (event) => {
     if (event.key === "Enter") {
       sendMessage();
@@ -65,11 +65,11 @@ const Message = () => {
   };
   return (
     <div>
-      <div className="bg-white h-screen flex flex-col-reverse pb-16">
+      <div className="bg-black h-screen flex flex-col-reverse pb-16">
           <div className="text-black flex flex-col items-end overflow-y-auto pr-12"
           ref={messagesContainerRef}>
             {serverMessages.map((message, index) => (
-              <div key={index} className="bg-gray-200 p-2 rounded mb-2">
+              <div key={index} className="bg-white p-2 rounded-2xl mb-2">
                 {message}
               </div>
             ))}
