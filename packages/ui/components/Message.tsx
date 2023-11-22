@@ -19,13 +19,14 @@ const Message = () => {
           data.payload.message,
         ]);
       } else if (data.type === "user") {
-        setUserId(data.payload.userId); // Set the user ID when received
+        setUserId(data.payload.userId); 
       }
     };
 
     ws.onopen = () => {
-      const urlParams = new URLSearchParams(window.location.search);
-      const roomId = urlParams.get("roomId");
+      const path = window.location.pathname;
+      const roomId = path.split('/').pop();
+      console.log(roomId)
       ws.send(
         JSON.stringify({
           type: "join",

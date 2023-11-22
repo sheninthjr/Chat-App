@@ -34,7 +34,7 @@ wss.on("connection", async (ws, req) => {
             RedisSubscriptionManager.getInstance().addChatMessage(roomId, message);
         }
     });
-    ws.on("disconnect", () => {
+    ws.on("close", () => {
         RedisSubscriptionManager.getInstance().unsubscribe(wsId.toString(), users[wsId].room);
     })
 });
