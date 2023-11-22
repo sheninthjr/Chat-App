@@ -11,7 +11,6 @@ export class RedisSubscriptionManager {
     private constructor() {
         this.subscriber = createClient();
         this.publisher = createClient();
-
         this.publisher.connect();
         this.subscriber.connect();
         this.subscriptions = new Map<string, string[]>();
@@ -38,10 +37,8 @@ export class RedisSubscriptionManager {
 
         if (Object.keys(this.reverseSubscriptions.get(room) || {})?.length === 1) {
             console.log(`subscribing message from ${room}`);
-            // This is the first subscriber to this room
             this.subscriber.subscribe(room, (payload) => {
                 try {
-                    // const parsedPayload = JSON.parse(payload);
                     const subscribers = this.reverseSubscriptions.get(room) || {};
                     Object.values(subscribers).forEach(({ws}) =>
                         ws.send(payload)
