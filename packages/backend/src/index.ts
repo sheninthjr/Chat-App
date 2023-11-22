@@ -18,7 +18,7 @@ const users: { [key: string]: {
 let counter = 0;
 
 wss.on("connection", async (ws, req) => {
-    const wsId = `user${counter++}`;
+    const wsId = counter++;
     ws.on("message", (message: string) => {
         const data = JSON.parse(message.toString());
         if (data.type === "join") {

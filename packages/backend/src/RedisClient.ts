@@ -71,7 +71,7 @@ export class RedisSubscriptionManager {
 
     async addChatMessage(
         room: string,
-        userId: string,
+        userId: number,
         message: string
     ) {
         this.publish(room, {

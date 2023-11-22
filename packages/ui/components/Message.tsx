@@ -18,15 +18,15 @@ const Message = () => {
           ...prevMessages,
           data.payload.message,
         ]);
+        setUserId(data.payload.userId);
       } else if (data.type === "user") {
-        setUserId(data.payload.userId); 
+        setUserId(data.payload.userId);
       }
     };
-
+    console.log(userId);
     ws.onopen = () => {
       const path = window.location.pathname;
-      const roomId = path.split('/').pop();
-      console.log(roomId)
+      const roomId = path.split("/").pop();
       ws.send(
         JSON.stringify({
           type: "join",
@@ -36,13 +36,12 @@ const Message = () => {
         })
       );
     };
-
     setWebSocket(ws);
     return () => {
       ws.close();
     };
   }, []);
-
+  console.log(userId);
   const sendMessage = () => {
     if (webSocket) {
       webSocket.send(
@@ -72,18 +71,11 @@ const Message = () => {
     <div>
       <div className="bg-black h-screen flex flex-col-reverse pb-16">
         <div
-          className={`${
-            userId === "yourUserId" ? "text-white" : "text-black"
-          } flex flex-col items-end overflow-y-auto pr-12`}
+          className="text-black flex flex-col items-end overflow-y-auto pr-12"
           ref={messagesContainerRef}
         >
           {serverMessages.map((message, index) => (
-            <div
-              key={index}
-              className={`${
-                userId === "yourUserId" ? "bg-black" : "bg-white"
-              } p-2 rounded-2xl mb-2`}
-            >
+            <div key={index} className="bg-gray-200 p-2 rounded-xl mb-2">
               {message}
             </div>
           ))}
