@@ -71,13 +71,15 @@ export class RedisSubscriptionManager {
 
     async addChatMessage(
         room: string,
+        userId: string,
         message: string
     ) {
         this.publish(room, {
             type: "message",
             payload: {
+                userId,
                 message
-            },
+            }
         });
     }
 

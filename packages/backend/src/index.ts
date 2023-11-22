@@ -31,10 +31,10 @@ wss.on("connection", async (ws, req) => {
         if (data.type === "message") {
             const roomId = users[wsId].room;
             const message = data.payload.message;
-            RedisSubscriptionManager.getInstance().addChatMessage(roomId, message);
+            RedisSubscriptionManager.getInstance().addChatMessage(roomId,wsId,message);
         }
     });
-    ws.on("close", () => {
+    ws.on("disconnect", () => {
         RedisSubscriptionManager.getInstance().unsubscribe(wsId.toString(), users[wsId].room);
     })
 });
