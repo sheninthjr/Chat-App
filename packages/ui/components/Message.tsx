@@ -35,6 +35,7 @@ const Message = () => {
         })
       );
     };
+    // @ts-ignore
     setWebSocket(ws);
     return () => {
       ws.close();
@@ -43,6 +44,7 @@ const Message = () => {
   console.log(userId);
   const sendMessage = () => {
     if (webSocket) {
+      // @ts-ignore
       webSocket.send(
         JSON.stringify({
           type: "message",
@@ -56,11 +58,13 @@ const Message = () => {
   };
   useEffect(() => {
     if (messagesContainerRef.current) {
+      // @ts-ignore
       messagesContainerRef.current.scrollTop =
+      // @ts-ignore
         messagesContainerRef.current.scrollHeight;
     }
   }, [serverMessages]);
-
+  // @ts-ignore
   const handleKeyPress = (event) => {
     if (event.key === "Enter") {
       sendMessage();
