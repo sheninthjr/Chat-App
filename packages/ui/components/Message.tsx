@@ -96,7 +96,7 @@ const Message = () => {
         <button
           className="bg-slate-900 w-10 rounded-xl ml-4 text-3xl"
           onClick={sendMessage}
-        >></button>
+        >{`>`}</button>
       </div>
     </div>
   );
