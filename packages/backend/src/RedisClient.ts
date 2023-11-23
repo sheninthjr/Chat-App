@@ -44,7 +44,7 @@ export class RedisSubscriptionManager {
                         ws.send(payload)
                     );
                 } catch (e) {
-                    console.error("erroneous payload found?");
+                    console.error("Erroneous payload found?");
                 }
             });
         }
