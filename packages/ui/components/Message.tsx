@@ -23,7 +23,6 @@ const Message = () => {
         setUserId(data.payload.userId);
       }
     };
-    console.log(userId);
     ws.onopen = () => {
       const path = window.location.pathname;
       const roomId = path.split("/").pop();
@@ -71,7 +70,7 @@ const Message = () => {
     <div>
       <div className="bg-black h-screen flex flex-col-reverse pb-16">
         <div
-          className="text-black flex flex-col items-end overflow-y-auto pr-12"
+          className="text-black flex flex-col items-end overflow-y-auto pr-4"
           ref={messagesContainerRef}
         >
           {serverMessages.map((message, index) => (
@@ -81,7 +80,7 @@ const Message = () => {
           ))}
         </div>
       </div>
-      <div className="fixed bottom-0 left-0 w-full p-4">
+      <div className=" flex justify-between fixed bottom-0 left-0 w-full p-4">
         <input
           type="text"
           value={inputMessage}
@@ -90,6 +89,7 @@ const Message = () => {
           onChange={(e) => setInputMessage(e.target.value)}
           onKeyPress={handleKeyPress}
         />
+        <button className="bg-slate-900 w-10 rounded-xl ml-4 text-3xl" onClick={sendMessage}>></button>
       </div>
     </div>
   );
