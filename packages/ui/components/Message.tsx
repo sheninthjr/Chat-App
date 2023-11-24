@@ -9,7 +9,7 @@ const Message = () => {
   const [userId, setUserId] = useState(null);
   const messagesContainerRef = useRef(null);
   useEffect(() => {
-    const ws = new WebSocket("ws://chat-backend.sheninthjr.com");
+    const ws = new WebSocket("wss://chat-backend.sheninthjr.com");
 
     ws.onmessage = function (event) {
       const data = JSON.parse(event.data);
