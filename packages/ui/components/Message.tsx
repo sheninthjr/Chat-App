@@ -75,7 +75,7 @@ const Message = () => {
     <div>
       <div className="bg-black h-screen flex flex-col-reverse pb-16">
         <div
-          className="text-black flex flex-col items-end overflow-y-auto pr-4"
+          className="text-black flex flex-col items-end overflow-y-auto pr-4 pb-5"
           ref={messagesContainerRef}
         >
           {serverMessages.map((message, index) => (
