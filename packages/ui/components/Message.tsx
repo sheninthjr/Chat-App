@@ -9,7 +9,7 @@ const Message = () => {
   const [userId, setUserId] = useState(null);
   const messagesContainerRef = useRef(null);
   useEffect(() => {
-    const ws = new WebSocket("ws://localhost:3001");
+    const ws = new WebSocket("ws://chat-backend.sheninthjr.com");
 
     ws.onmessage = function (event) {
       const data = JSON.parse(event.data);
@@ -38,6 +38,7 @@ const Message = () => {
     // @ts-ignore
     setWebSocket(ws);
     return () => {
+      console.log("Cleaning up Websocket");
       ws.close();
     };
   }, []);
@@ -60,7 +61,7 @@ const Message = () => {
     if (messagesContainerRef.current) {
       // @ts-ignore
       messagesContainerRef.current.scrollTop =
-      // @ts-ignore
+        // @ts-ignore
         messagesContainerRef.current.scrollHeight;
     }
   }, [serverMessages]);
