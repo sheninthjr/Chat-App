@@ -2,6 +2,10 @@
 
 ## Incognito Chat App
 
+![Alt Text](/1.png)
+
+![Alt Text](/2.png)
+
 ## Realtime Chat Communication with WebSockets and Redis
 
 This project is a simple Realtime Chat application built using WebSockets for communication and Redis for managing room-based messaging. It allows users to join different chat rooms and exchange messages in real-time.
