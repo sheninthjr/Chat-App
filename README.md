@@ -1,22 +1,27 @@
 # Sheninth Jr Chat App
 
-## Incognito Chat App
+## Jr Chat App
 
-![Alt Text](/1.png)
+![Alt Text](/sample.png)
 
-![Alt Text](/2.png)
 
-## Realtime Chat Communication with WebSockets and Redis
+# Realtime Chat Application with Next.js, WebSockets, and Redis
 
-This project is a simple Realtime Chat application built using WebSockets for communication and Redis for managing room-based messaging. It allows users to join different chat rooms and exchange messages in real-time.
+This repository houses a modern and scalable realtime chat application built with Next.js, WebSockets, and Redis. The application allows users to engage in instant messaging with a responsive and interactive user interface.
 
-### Features
+## Features:
 
-#### Real-time Communication: 
-The application leverages WebSockets to enable real-time communication between clients and the server, providing instant message delivery.
+### Next.js: 
+Utilizes the power of Next.js for server-side rendering, optimized performance, and a seamless development experience.
 
-#### Message Persistence: 
-Redis is used to persist chat messages. This ensures that chat history is maintained, and users joining a room can see previous messages.
+### WebSockets: 
+Enables realtime bidirectional communication between the server and clients, ensuring instant message updates and a smooth user experience.
+
+### Redis: 
+Serves as a scalable and efficient message broker, storing and distributing messages among connected clients for enhanced performance and reliability.
+
+### Responsive UI: 
+A user-friendly and responsive interface that adapts to various devices, providing a consistent experience across desktop and mobile platforms.
 
 ### Frontend Setup
 
