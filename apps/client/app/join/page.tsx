@@ -6,7 +6,7 @@ const JoinBox = () => {
     const [id,setId]= useState('')
     const router = useRouter();
     const joinRoom  = ()=>{
-        router.push(`/${id}`)
+        router.push(`/${id}`) 
     }
   return (
     <div>
